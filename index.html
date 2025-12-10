@@ -4,49 +4,129 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>Ragab — Portfolio</title>
-        <meta name="description" content="Portfolio and resume page for Ragab" />
-        <link rel="stylesheet" href="style.css" />
+        <title>Ragab Elsayed — Software Engineer</title>
+        <meta name="description" content="Ragab Elsayed — Embedded Software & C/C++ developer. Portfolio and resume." />
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">
         <style>
-            /* small overrides for portfolio layout */
-            body { background: #0f1720; color: #e6eef8; font-family: 'Cairo', sans-serif; }
-            .hero { max-width: 960px; margin: 40px auto; padding: 28px; text-align: center; }
-            .card { background: rgba(255,255,255,0.04); padding: 22px; border-radius: 10px; }
-            .name { font-size: 2.2rem; font-weight: 800; margin-bottom: 8px; }
-            .title { color: #9fb0c8; margin-bottom: 16px; }
-            .actions { margin: 16px 0; }
-            .btn-download { background: #3b82f6; color: white; padding: 10px 16px; border-radius: 6px; text-decoration: none; }
-            .resume-embed { width: 100%; height: 70vh; border: none; margin-top: 18px; border-radius: 6px; }
-            footer { text-align: center; margin: 28px 0; color: #9fb0c8; }
-            @media (max-width:600px){ .resume-embed{ height: 60vh } }
+            :root{ --bg:#0b1220; --card:#0f1724; --muted:#9fb0c8; --accent:#3b82f6; }
+            html,body{height:100%;margin:0;font-family:'Cairo',sans-serif;background:var(--bg);color:#e6eef8}
+            .container{max-width:1000px;margin:32px auto;padding:20px}
+            header{display:flex;gap:20px;align-items:center}
+            .avatar{width:96px;height:96px;border-radius:12px;background:linear-gradient(135deg,#0f1724,#111827);display:flex;align-items:center;justify-content:center;font-weight:800;color:#fff}
+            .intro{flex:1}
+            h1{margin:0;font-size:1.9rem}
+            .subtitle{color:var(--muted);margin-top:6px}
+            .card{background:var(--card);padding:20px;border-radius:12px;margin-top:18px}
+            .row{display:flex;gap:20px;flex-wrap:wrap}
+            .col{flex:1;min-width:260px}
+            .section-title{font-weight:700;margin-bottom:8px}
+            ul.skills{list-style:none;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:8px}
+            ul.skills li{background:#0b2236;padding:6px 10px;border-radius:6px;color:var(--muted);font-size:0.9rem}
+            .btn{display:inline-block;padding:8px 12px;border-radius:8px;text-decoration:none;color:white}
+            .btn-primary{background:var(--accent)}
+            .btn-ghost{background:#0b2236;color:var(--muted)}
+            .project{margin-bottom:12px}
+            footer{color:var(--muted);text-align:center;margin:28px 0}
+            iframe.resume{width:100%;height:60vh;border-radius:8px;border:1px solid rgba(255,255,255,0.04);margin-top:12px}
+            @media(max-width:700px){header{flex-direction:column;align-items:flex-start}.avatar{width:72px;height:72px}}
         </style>
     </head>
     <body>
-        <main class="hero">
-            <div class="card">
-                <div class="profile">
-                    <div class="name">Ragab</div>
-                    <div class="title">Software Developer · Portfolio</div>
-                    <p>Welcome — this site is now a personal portfolio page. Below is my CV and quick links to contact and view code.</p>
-                    <div class="actions">
-                        <a class="btn-download" href="assets/Ragab_resume.pdf" download>Download Resume (PDF)</a>
-                        <a class="btn-download" style="background:#06b6d4;margin-left:8px" href="https://github.com/Ragab2010" target="_blank">GitHub</a>
+        <div class="container">
+            <header>
+                <div class="avatar">RE</div>
+                <div class="intro">
+                    <h1>Ragab Elsayed</h1>
+                    <div class="subtitle">Software Engineer — Embedded & C/C++ • Linux system programming • Device drivers</div>
+                    <div style="margin-top:10px">
+                        <a class="btn btn-primary" href="assets/Ragab_resume.pdf" download>Download Resume (PDF)</a>
+                        <a class="btn btn-ghost" href="https://bit.ly/2Wr6wHy" target="_blank" style="margin-left:8px">GitHub</a>
+                        <a class="btn btn-ghost" href="https://bit.ly/3CX6czL" target="_blank" style="margin-left:8px">LinkedIn</a>
                     </div>
                 </div>
+            </header>
 
-                <section>
-                    <h4 style="margin-top:18px">Resume (preview)</h4>
-                    <!-- Place your PDF at assets/Ragab_resume.pdf to make this embed work -->
-                    <iframe class="resume-embed" src="assets/Ragab_resume.pdf"></iframe>
-                    <p style="margin-top:12px; color:#9fb0c8;">If the preview does not display, download the PDF using the button above.</p>
-                </section>
+            <section class="card">
+                <div class="row">
+                    <div class="col">
+                        <div class="section-title">Professional summary</div>
+                        <p>Software engineer with 5+ years of experience in C/C++ development, Linux system programming, kernel development, and embedded systems. Skilled in modern C++ (C++11/14/17), Qt, STL, multi-threading, OOP and device driver development. Strong background in problem-solving, optimization, algorithms, and debugging.</p>
+
+                        <div style="margin-top:12px">
+                            <div class="section-title">Contact</div>
+                            <div>Email: <a href="mailto:ragabelsayedd@gmail.com">ragabelsayedd@gmail.com</a></div>
+                            <div>Mobile: +(20) 109-187-7137</div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="section-title">Technical skills</div>
+                        <ul class="skills">
+                            <li>C / C++ (98,11,14,17)</li>
+                            <li>Embedded C, Assembly</li>
+                            <li>Linux System Programming</li>
+                            <li>Device Drivers (UART, ADC, GPIO)</li>
+                            <li>Yocto, BusyBox, cross-compilation</li>
+                            <li>Socket programming, multithreading</li>
+                            <li>Qt QML, GUI</li>
+                            <li>GIT, Jenkins, Docker</li>
+                            <li>SQL / SQLite</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="card">
+                <div class="section-title">Selected projects & achievements</div>
+                <div class="project">
+                    <strong>ProLED Flasher 30x</strong> — Firmware for PIC16F887 controlling 30 independent LED lines with programmable flashing patterns. Implemented modular C code and ADC driver integration to monitor analog inputs and synchronize sequences.
+                </div>
+                <div class="project">
+                    <strong>Bank System</strong> — CLI banking system with account management and persistence using SQLite3 and JSON. Implemented in C++ with configurable persistence layer and CMake build.
+                </div>
+                <div class="project">
+                    <strong>File Encryptor Tool</strong> — GUI and CLI tool for AES-256-CBC file encryption/decryption (C++ / Qt).
+                </div>
+                <div class="project">
+                    <strong>Simple Mail Server</strong> — HTTP/TCP based mail server using SQLite for storage and JSON for client-server communication.
+                </div>
+                <div class="project">
+                    <strong>Sorting Algorithm Comparison Tool</strong> — Benchmark suite for comparing sorting algorithms performance and time complexity.
+                </div>
+                <div class="project">
+                    <strong>Motor Control System</strong> — Embedded system communicating with PC via JSON protocol, reporting current/voltage/power periodically (Atmega8).
+                </div>
+                <div style="margin-top:10px">More projects available on <a href="https://bit.ly/2Wr6wHy" target="_blank">GitHub</a>.</div>
+            </section>
+
+            <div class="row">
+                <div class="col card">
+                    <div class="section-title">Education</div>
+                    <div><strong>B.Sc. Electronics & Communication Engineering</strong>, Delta Higher Institute for Engineering & Technology — Mansoura, Egypt (2009-2013). Graduation project: Smart Wheelchair (WiFi control, motor control, TCP/UDP).</div>
+                </div>
+
+                <div class="col card">
+                    <div class="section-title">Certifications</div>
+                    <ul>
+                        <li>AUTOMOTIVE & ELECTRONIC IP — EITESAL NGO (12/2023)</li>
+                        <li>Intro to AUTOSAR (05/2023)</li>
+                        <li>Embedded Software and Hardware Architecture — University of Colorado Boulder (10/2018)</li>
+                        <li>Various embedded & communications courses (2017-2018)</li>
+                    </ul>
+                </div>
             </div>
+
+            <section class="card" style="margin-top:18px">
+                <div class="section-title">Resume preview</div>
+                <iframe class="resume" src="assets/Ragab_resume.pdf"></iframe>
+                <div style="margin-top:10px;color:var(--muted)">If the preview doesn't render, download the PDF using the button at the top.</div>
+            </section>
+
             <footer>
-                <div>Contact: <a href="mailto:your-email@example.com">your-email@example.com</a></div>
-                <div style="margin-top:6px">Want edits? Put your updated PDF at <code>assets/Ragab_resume.pdf</code>.</div>
+                <div>Volunteer: Co-Founder of ITS initiative — open courseware and community education.</div>
+                <div style="margin-top:8px">References available upon request • <a href="mailto:ragabelsayedd@gmail.com">Contact</a></div>
             </footer>
-        </main>
+        </div>
     </body>
 </html>
