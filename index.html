@@ -1,74 +1,52 @@
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="UTF-8" />
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<link rel="shortcut icon" type="image/x-icon" href="images/logo.png" />
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
-<link rel="preconnect" href="https://fonts.gstatic.com" />
-<link href="https://fonts.googleapis.com/css2?family=Cairo&amp;display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="style.css?v=0.4" />
-<link rel="manifest" href="manifest.json">
-<link rel="apple-touch-icon" href="/images/size-192.png">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-<meta property="og:type" content="website" />
-<meta name="theme-color" content="#82c342" />
-<meta property="og:site_name" content="محجوب | لتنجنب الحظر علي مواقع التواصل الإجتماعي" />
-<meta property="og:locale" content="ar_AR" />
-<meta property="og:locale:alternate" content="ar_AR" />
-<meta property="og:url" content="https://gazafree.github.io/" />
-<meta property="og:title" content="محجوب | لتنجنب الحظر علي مواقع التواصل الإجتماعي" />
-<meta property="og:description" content="أداة لتغيير من شكل النصوص وتشفيرها بحيث تتخطي الحجب والحظر علي مواقع التواصل الإجتماعي المختلفة" />
-<meta property="og:image" content="https://Ma7goob.com/images/cover.png" />
-<meta property="og:image:width" content="256" />
-<meta property="og:image:height" content="256" />
-<title>محجوب - Ma7goob</title>
-</head>
-<body>
-<div class="container">
-<div class="col-sm main-section">
-<h3><img class="logo m-2" src="images/logo.png" alt="logo" /></h3>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Ragab — Portfolio</title>
+        <meta name="description" content="Portfolio and resume page for Ragab" />
+        <link rel="stylesheet" href="style.css" />
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">
+        <style>
+            /* small overrides for portfolio layout */
+            body { background: #0f1720; color: #e6eef8; font-family: 'Cairo', sans-serif; }
+            .hero { max-width: 960px; margin: 40px auto; padding: 28px; text-align: center; }
+            .card { background: rgba(255,255,255,0.04); padding: 22px; border-radius: 10px; }
+            .name { font-size: 2.2rem; font-weight: 800; margin-bottom: 8px; }
+            .title { color: #9fb0c8; margin-bottom: 16px; }
+            .actions { margin: 16px 0; }
+            .btn-download { background: #3b82f6; color: white; padding: 10px 16px; border-radius: 6px; text-decoration: none; }
+            .resume-embed { width: 100%; height: 70vh; border: none; margin-top: 18px; border-radius: 6px; }
+            footer { text-align: center; margin: 28px 0; color: #9fb0c8; }
+            @media (max-width:600px){ .resume-embed{ height: 60vh } }
+        </style>
+    </head>
+    <body>
+        <main class="hero">
+            <div class="card">
+                <div class="profile">
+                    <div class="name">Ragab</div>
+                    <div class="title">Software Developer · Portfolio</div>
+                    <p>Welcome — this site is now a personal portfolio page. Below is my CV and quick links to contact and view code.</p>
+                    <div class="actions">
+                        <a class="btn-download" href="assets/Ragab_resume.pdf" download>Download Resume (PDF)</a>
+                        <a class="btn-download" style="background:#06b6d4;margin-left:8px" href="https://github.com/Ragab2010" target="_blank">GitHub</a>
+                    </div>
+                </div>
 
-<h3 class="my-3"> أدخل النص المحجوب الذي تود تغييره</h3>
-<textarea id="userText" class="form-control textarea rounded" dir="rtl" placeholder="اكتب هنا..." rows="8"></textarea>
-<button id="submit-text" type="button" class="btn convert-button btn-dark btn-lg btn-block" onclick="formatWords()">حول النص</button>
-</div>
-<div id="modify-section" style="display: none;">
-<div class="extracted-words-container" id="word-choice-container">
-<h3 class="py-5">إضغط علي الكلمات التي تود تشفيرها</h3>
-<div id="wordsBox" class="bg-light rounded p-2 text-right" dir="rtl"></div>
-</div>
-<div id="ctrl-btns">
-    <div class="row my-3">
-        <button type="button" class="col-sm btn btn-dark btn-lg keywords m-3" onclick="selectKeywords()">أضف الكلمات الشائعة للتحديد</button>
-        <button type="button" class="col-sm btn btn-dark btn-lg keywords m-3" onclick="deselectAll()">إلغاء التحديد</button>
-        <button type="button" class="col-sm btn btn-dark btn-lg keywords m-3" onclick="selectAll()">تحديد الكل</button>
-    </div>
-    <div class="row my-3">
-        <button id="convert" type="button" class="col-sm btn btn-dark btn-lg convert m-3" onclick="convertText()">قم بالتشفير</button>
-    </div>
-</div>
-</div>
-<div class="result-section" id="result-section" style="display: none;">
-<h3>اضغط للنسخ</h3>
-<div id="newTextBox" class="text-right">
-</div>
-</div>
-<footer class="text-center small m-5" dir="rtl">
-للتواصل و اقتراح مميزات جديدة أو كلمات مفتاحية <a href="/cdn-cgi/l/email-protection#0e687c6b6b696f746f3c3e3c3d4e69636f6762206d6163" class="text-white"><span class="__cf_email__" data-cfemail="0e687c6b6b696f746f3c3e3c3d4e69636f6762206d6163">[email&#160;protected]</span></a>
-<p class="mb-0">
-    <a href="https://github.com/gazafree/gazafree.github.io" class="btn btn-info" target="_blank">للمشاركة في التطوير</a>
-</p>
-</footer>
-<script data-cfasync="false" src="email-decode.min.js"></script><script src="keywords.js?v=0.4"></script>
-<script src="script.js?v=0.41"></script>
-<script src="mobile-version.js?v=0.4" async></script>
-</div>
-</body>
+                <section>
+                    <h4 style="margin-top:18px">Resume (preview)</h4>
+                    <!-- Place your PDF at assets/Ragab_resume.pdf to make this embed work -->
+                    <iframe class="resume-embed" src="assets/Ragab_resume.pdf"></iframe>
+                    <p style="margin-top:12px; color:#9fb0c8;">If the preview does not display, download the PDF using the button above.</p>
+                </section>
+            </div>
+            <footer>
+                <div>Contact: <a href="mailto:your-email@example.com">your-email@example.com</a></div>
+                <div style="margin-top:6px">Want edits? Put your updated PDF at <code>assets/Ragab_resume.pdf</code>.</div>
+            </footer>
+        </main>
+    </body>
 </html>
